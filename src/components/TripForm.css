@@ -1,0 +1,135 @@
+.trip-form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 28px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.trip-form__header {
+  margin-bottom: 22px;
+}
+
+.trip-form__header h2 {
+  font-size: 1.375rem;
+  margin-bottom: 6px;
+}
+
+.trip-form__header p {
+  color: var(--color-ink-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field__label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 6px;
+}
+
+.field__control {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.field__control:focus-within {
+  border-color: var(--color-brand);
+  background: var(--color-surface);
+}
+
+.field__control--error {
+  border-color: var(--color-danger);
+}
+
+.field__control input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 11px 12px;
+  font-size: 0.9375rem;
+  color: var(--color-ink);
+  outline: none;
+  min-width: 0;
+}
+
+.field__control input::placeholder {
+  color: var(--color-ink-faint);
+}
+
+.field__control input[type="number"]::-webkit-outer-spin-button,
+.field__control input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.field__control input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.field__suffix {
+  padding-right: 12px;
+  font-size: 0.8125rem;
+  color: var(--color-ink-faint);
+  white-space: nowrap;
+}
+
+.field__error {
+  overflow: hidden;
+  font-size: 0.8125rem;
+  color: var(--color-danger);
+}
+
+.trip-form__submit {
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--color-amber);
+  color: var(--color-ink);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 13px 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.trip-form__submit:hover:not(:disabled) {
+  background: var(--color-amber-dark);
+}
+
+.trip-form__submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.trip-form__submit-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.spinner {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid rgba(18, 22, 31, 0.25);
+  border-top-color: var(--color-ink);
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
