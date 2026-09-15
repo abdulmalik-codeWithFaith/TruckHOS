@@ -1,0 +1,46 @@
+.results-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 24px 64px;
+}
+
+.results-page__toolbar {
+  margin-bottom: 20px;
+}
+
+.results-page__reset {
+  border: none;
+  background: transparent;
+  color: var(--color-brand);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 6px 0;
+}
+
+.results-page__reset:hover {
+  text-decoration: underline;
+}
+
+.results-page__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.results-page__map-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 860px) {
+  .results-page__map-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stop-list,
+  .route-map {
+    height: 320px;
+  }
+}

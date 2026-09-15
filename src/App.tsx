@@ -2,16 +2,44 @@ import { useState } from "react";
 import Header from "./components/Header";
 import RouteMotif from "./components/RouteMotif";
 import TripForm from "./components/TripForm";
-import type { TripRequest } from "./types/trip";
+import ResultsPage from "./pages/ResultsPage";
+import { planTrip } from "./services/api";
+import type { ApiError, TripPlanResponse, TripRequest } from "./types/trip";
 import "./App.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
+  const [result, setResult] = useState<TripPlanResponse | null>(null);
+  const [request, setRequest] = useState<TripRequest | null>(null);
+  const [error, setError] = useState<ApiError | null>(null);
 
-  function handleSubmit(data: TripRequest) {
-    console.log("Trip request ready to send:", data);
+  async function handleSubmit(data: TripRequest) {
+    setRequest(data);
+    setError(null);
     setIsLoading(true);
-    window.setTimeout(() => setIsLoading(false), 1500);
+    try {
+      const plan = await planTrip(data);
+      setResult(plan);
+    } catch (err) {
+      setError(err as ApiError);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  function handleReset() {
+    setResult(null);
+    setRequest(null);
+    setError(null);
+  }
+
+  if (result && request) {
+    return (
+      <div className="app">
+        <Header />
+        <ResultsPage data={result} request={request} onReset={handleReset} />
+      </div>
+    );
   }
 
   return (
@@ -28,7 +56,14 @@ function App() {
             </p>
             <RouteMotif className="hero__motif" active={!isLoading} />
           </div>
-          <TripForm onSubmit={handleSubmit} isLoading={isLoading} />
+          <div className="hero__form-column">
+            <TripForm onSubmit={handleSubmit} isLoading={isLoading} />
+            {error && (
+              <div className="hero__error" role="alert">
+                {error.message}
+              </div>
+            )}
+          </div>
         </div>
       </main>
     </div>

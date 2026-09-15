@@ -1,0 +1,117 @@
+.eld-viewer {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 24px 28px;
+}
+
+.eld-viewer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.eld-viewer__title {
+  font-size: 1.125rem;
+}
+
+.eld-viewer__tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+}
+
+.eld-viewer__tab {
+  border: none;
+  background: transparent;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.eld-viewer__tab:hover {
+  color: var(--color-ink);
+}
+
+.eld-viewer__tab--active {
+  background: var(--color-surface);
+  color: var(--color-brand);
+  box-shadow: 0 1px 3px rgba(18, 22, 31, 0.12);
+}
+
+.eld-viewer__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--color-ink-muted);
+  margin-bottom: 12px;
+}
+
+.eld-viewer__totals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+}
+
+.eld-viewer__total {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.eld-viewer__total-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.eld-viewer__total-label {
+  font-size: 0.75rem;
+  color: var(--color-ink-muted);
+}
+
+.eld-viewer__remarks {
+  margin-top: 20px;
+}
+
+.eld-viewer__remarks h4 {
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  color: var(--color-ink);
+}
+
+.eld-viewer__remarks ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.eld-viewer__remarks li {
+  font-size: 0.8125rem;
+  color: var(--color-ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 640px) {
+  .eld-viewer__totals {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 14px;
+  }
+}

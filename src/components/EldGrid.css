@@ -1,0 +1,22 @@
+.eld-grid {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.eld-grid svg {
+  min-width: 640px;
+  display: block;
+}
+
+.eld-grid__row-label {
+  font-size: 11px;
+  font-family: var(--font-body);
+  fill: var(--color-ink-muted);
+  font-weight: 600;
+}
+
+.eld-grid__hour-label {
+  font-size: 10px;
+  font-family: var(--font-body);
+  fill: var(--color-ink-faint);
+}
