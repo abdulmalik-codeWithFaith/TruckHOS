@@ -43,6 +43,9 @@
   .route-map {
     height: 320px;
   }
+  .results-page{
+    width: 100%;
+  }
 }
 
 .results-page__sections > * {
