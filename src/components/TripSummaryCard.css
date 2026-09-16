@@ -46,7 +46,4 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 16px;
   }
-  .trip-summary{
-    width: 70%;
-  }
 }

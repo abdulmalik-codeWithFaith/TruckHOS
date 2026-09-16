@@ -53,8 +53,3 @@
   font-size: 0.8125rem;
 }
 
-@media (max-width: 720px) {
-  .stop-list{
-    width: 70%;
-  }
-}

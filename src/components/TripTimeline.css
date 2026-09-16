@@ -82,9 +82,3 @@
   overflow-wrap: break-word;
 }
 
-
-@media (max-width: 720px) {
-  .trip-timeline{
-    width: 70%;
-  }
-}

@@ -32,14 +32,3 @@
 
 
 
-@media (max-width: 720px) {
-  .route-map {
-    width: 70%;
-    overflow-x: auto;
-  }
-
-  .route-map__container {
-    width: 200%;
-    height: 100%;
-  }
-}
