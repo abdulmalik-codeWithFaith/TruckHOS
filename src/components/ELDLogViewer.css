@@ -114,7 +114,4 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 14px;
   }
-  .eld-viewer{
-    width: 50%;
-  }
 }
