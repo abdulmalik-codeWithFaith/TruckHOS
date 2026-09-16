@@ -52,3 +52,9 @@
   color: var(--color-ink-faint);
   font-size: 0.8125rem;
 }
+
+@media (max-width: 720px) {
+  .stop-list{
+    width: 50%;
+  }
+}

@@ -1,5 +1,4 @@
 
-## `frontend/README.md`
 
 ```markdown
 # TruckHOS — Frontend
@@ -32,7 +31,8 @@ frontend, so they can never disagree with each other.
 ## Tech stack
 
 - React 18 + Vite + TypeScript
-- React Leaflet (map) over OpenStreetMap tiles
+- React Leaflet (map) over OpenStreetMap's standard tile server
+  (`tile.openstreetmap.org`) — free, no API key required
 - Framer Motion (animation)
 - Axios (API calls)
 - Lucide React (icons)
@@ -83,6 +83,19 @@ this value requires a redeploy, not just a page refresh.
 Deployed to Vercel. Framework preset: Vite (auto-detected). No special
 root directory needed since this repo only contains the frontend.
 
+## Responsive design notes
+
+- The results page (trip summary, map, stops, timeline, ELD logs) is fully
+  responsive down to mobile widths.
+- The route map uses a horizontally scrollable container on narrow
+  screens (rather than shrinking the map itself), since compressing a
+  cross-country route into a very narrow viewport makes it unreadable —
+  swiping/dragging reveals the full route, consistent with how embedded
+  maps commonly behave on mobile.
+- The ELD 24-hour duty-status grid similarly scrolls horizontally within
+  its own card on narrow screens, since a full day's timeline needs more
+  width than a phone screen offers to stay legible.
+
 ## Notes
 
 - Render's free tier spins down after inactivity — the first request after
@@ -90,4 +103,8 @@ root directory needed since this repo only contains the frontend.
   expected, not a bug.
 - The backend enforces CORS; only origins listed in its
   `CORS_EXTRA_ORIGINS` environment variable can call the API.
+- If map tiles ever fail to load, this is most commonly OpenStreetMap's
+  tile server being transiently slow/rate-limited for the visitor's
+  network, not an application bug — the map's markers, route line, and
+  interactivity still function independently of tile image loading.
 ```

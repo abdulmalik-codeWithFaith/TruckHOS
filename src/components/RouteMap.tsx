@@ -31,6 +31,17 @@ function FitToRoute({ positions }: { positions: [number, number][] }) {
   return null;
 }
 
+function InvalidateSizeOnMount() {
+  const map = useMap();
+  useEffect(() => {
+    const timers = [
+      setTimeout(() => map.invalidateSize(), 100),
+      setTimeout(() => map.invalidateSize(), 500),
+    ];
+    return () => timers.forEach(clearTimeout);
+  }, [map]);
+  return null;
+}
 export default function RouteMap({ route, stops }: RouteMapProps) {
   const positions: [number, number][] = route.coordinates.map(([lng, lat]) => [lat, lng]);
 
@@ -62,6 +73,7 @@ export default function RouteMap({ route, stops }: RouteMapProps) {
           </Marker>
         ))}
         <FitToRoute positions={positions} />
+        <InvalidateSizeOnMount />
       </MapContainer>
     </div>
   );

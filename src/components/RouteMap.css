@@ -28,3 +28,18 @@
   font-size: 15px;
   box-shadow: 0 2px 6px rgba(18, 22, 31, 0.25);
 }
+
+
+
+
+@media (max-width: 720px) {
+  .route-map {
+    width: 50%;
+    overflow-x: auto;
+  }
+
+  .route-map__container {
+    width: 200%;
+    height: 100%;
+  }
+}

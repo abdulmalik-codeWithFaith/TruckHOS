@@ -4,6 +4,7 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   padding: 24px 28px;
+
 }
 
 .trip-summary__route {
@@ -16,8 +17,8 @@
 
 .trip-summary__stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px 20px;
 }
 
 .trip-summary__stat {
@@ -38,9 +39,14 @@
   color: var(--color-ink-muted);
 }
 
+
+
 @media (max-width: 720px) {
   .trip-summary__stats {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 16px;
+  }
+  .trip-summary{
+    width: 50%;
   }
 }
