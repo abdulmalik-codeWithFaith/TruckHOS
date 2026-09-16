@@ -84,3 +84,13 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  overflow-x: hidden;
+}

@@ -43,8 +43,8 @@ export default function RouteMap({ route, stops }: RouteMapProps) {
         className="route-map__container"
       >
         <TileLayer
-          attribution='Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           maxZoom={19}
         />
         <Polyline positions={positions} pathOptions={{ color: "#1f4b99", weight: 4, opacity: 0.85 }} />
