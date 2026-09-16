@@ -44,3 +44,11 @@
     height: 320px;
   }
 }
+
+.results-page__sections > * {
+  min-width: 0;
+}
+
+.results-page__map-row > * {
+  min-width: 0;
+}

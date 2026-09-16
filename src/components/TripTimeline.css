@@ -68,15 +68,16 @@
   color: var(--color-ink-faint);
   font-variant-numeric: tabular-nums;
 }
-
 .trip-timeline__label {
   font-size: 0.9375rem;
   font-weight: 500;
   margin-top: 2px;
+  overflow-wrap: break-word;
 }
 
 .trip-timeline__location {
   font-size: 0.8125rem;
   color: var(--color-ink-muted);
   margin-top: 1px;
+  overflow-wrap: break-word;
 }

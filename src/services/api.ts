@@ -8,12 +8,7 @@ const client = axios.create({
   timeout: 30000, // route/geocoding calls can take a few seconds
 });
 
-/**
- * Calls POST /api/trips/plan/. On failure, throws an ApiError with a
- * user-friendly message extracted from the backend's response shape
- * ({ message, field? } or DRF's { message, errors }), falling back to a
- * generic message for anything unexpected (network failure, etc.).
- */
+
 export async function planTrip(request: TripRequest): Promise<TripPlanResponse> {
   try {
     const response = await client.post<TripPlanResponse>("/api/trips/plan/", request);
