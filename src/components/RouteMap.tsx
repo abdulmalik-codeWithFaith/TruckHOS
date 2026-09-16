@@ -43,11 +43,10 @@ export default function RouteMap({ route, stops }: RouteMapProps) {
         className="route-map__container"
       >
         <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-        subdomains="abcd"
-        maxZoom={19}
-      />
+          attribution='Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png"
+          maxZoom={19}
+        />
         <Polyline positions={positions} pathOptions={{ color: "#1f4b99", weight: 4, opacity: 0.85 }} />
         {stops.map((stop, i) => (
           <Marker key={i} position={[stop.lat, stop.lng]} icon={stopDivIcon(stop)}>
